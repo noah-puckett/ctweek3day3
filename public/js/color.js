@@ -1,27 +1,17 @@
 const colorRoot = document.getElementById('color-root');
-//another appendable thing?
 
 const search = new URLSearchParams();
-console.log(search.get('name'));
+const color = search.get('color');
 
-fetch('/api/v1/colors/:name')
+fetch('api/v1/color/:color/')
     .then(
         res => {
             return res.json();
         }
-    );
-//     fetch('/api/v1/colors')
-//     .then(
-//         res => {
-//             return res.json();
-//         }
-//     )
-//     .then(colors => {
-//         colors.forEach(color => {
-//             const li = document.createElement('li');
-//             li.textContent = color.name;
-//             colorsList.appendChild(li);
-//         });
-//     });
+    )
+    .then(color => {
+        color = 'red';
+        return color;
+    });
 
-// root.appendChild(colorsList);
+colorRoot.appendChild(color);
