@@ -7,7 +7,7 @@ describe('app routes', () => {
         return request(app)
             .get('/')
             .then(res => {
-                expect(res.text).toEqual(expect.stringContaining('hi'));
+                expect(res.text).toEqual(expect.stringContaining('HWEEL'));
             });
     }); 
 
